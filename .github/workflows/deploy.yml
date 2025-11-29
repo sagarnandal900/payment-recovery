@@ -1,4 +1,4 @@
-name: Deploy → SFTP Port 2211 (REALLY WORKS – build folder)
+name: Deploy to Server
 
 on:
   push:
@@ -10,33 +10,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js 20
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
-      - name: Build project → creates /build folder
+      - name: Build
         run: npm run build
 
-      - name: Create PROOF file inside build folder
-        run: |
-          echo "Deployed at $(date '+%Y-%m-%d\ %H:%M:%S)" > build/PROOF.txt
-          echo "Commit: ${{ github.sha }}" >> build/PROOF.txt
-          echo "By: ${{ github.actor }}" >> build/PROOF.txt
-          cat build/PROOF.txt
-
-      - name: Deploy via SFTP (Port 2211) – uploads the build folder
+      - name: Deploy via SFTP (Port 2211)
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
           username: ${{ secrets.SSH_USER }}
           server: ${{ secrets.FTP_HOST }}
           port: 2211
           password: ${{ secrets.FTP_PASSWORD }}
-          local_path: './build/*'          # ← This is the key fix!
+          local_path: './build/*'
           remote_path: /opt/lampp/htdocs/prbk/
           args: >-
             -o StrictHostKeyChecking=no
