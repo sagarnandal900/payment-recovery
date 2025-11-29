@@ -1,0 +1,186 @@
+/* ========================================
+   FOOTER - PROFESSIONAL CLEAN DESIGN
+   ======================================== */
+
+.footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #94a3b8;
+  margin-top: auto;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1e40af 0%, #3b82f6 25%, #f97316 50%, #fbbf24 75%, #10b981 100%);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ========================================
+   FOOTER MAIN
+   ======================================== */
+
+.footer-main {
+  text-align: center;
+  padding: 48px 24px 32px;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-icon {
+  width: 40px;
+  height: 40px;
+  color: #3b82f6;
+}
+
+.footer-brand span {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.footer-tagline {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ========================================
+   FOOTER DIVIDER
+   ======================================== */
+
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #334155 50%, transparent 100%);
+  margin: 0 24px;
+}
+
+/* ========================================
+   FOOTER BOTTOM
+   ======================================== */
+
+.footer-bottom {
+  text-align: center;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.copyright {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.made-with {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.heart-icon {
+  width: 20px;
+  height: 20px;
+  color: #ef4444;
+  fill: #ef4444;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 40px 20px 28px;
+  }
+  
+  .footer-brand span {
+    font-size: 1.5rem;
+  }
+  
+  .footer-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .footer-tagline {
+    font-size: 1.1rem;
+  }
+  
+  .footer-bottom {
+    padding: 24px;
+  }
+  
+  .copyright {
+    font-size: 1rem;
+  }
+  
+  .made-with {
+    font-size: 0.95rem;
+  }
+  
+  .heart-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main {
+    padding: 32px 16px 24px;
+  }
+  
+  .footer-brand {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer-brand span {
+    font-size: 1.375rem;
+  }
+  
+  .footer-tagline {
+    font-size: 1rem;
+  }
+  
+  .footer-bottom {
+    padding: 20px;
+  }
+  
+  .copyright {
+    font-size: 0.95rem;
+  }
+  
+  .made-with {
+    font-size: 0.9rem;
+  }
+}

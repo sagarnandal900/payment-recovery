@@ -1,0 +1,282 @@
+.settings-page .page-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.75rem;
+  margin-bottom: 4px;
+}
+
+.settings-page .page-header p {
+  color: var(--text-secondary);
+}
+
+.settings-grid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.settings-card {
+  padding: 24px;
+}
+
+.settings-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.settings-card .card-header svg {
+  color: var(--primary);
+}
+
+.settings-card .card-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.settings-card .card-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.form-group label svg {
+  color: var(--text-muted);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Checkbox Styles */
+.checkbox-group {
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-weight: 400 !important;
+  color: var(--text-secondary) !important;
+}
+
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  position: relative;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.checkbox-label input:checked + .checkbox-custom {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.checkbox-label input:checked + .checkbox-custom::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Test Email Section */
+.test-email-section {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.test-email-section .form-group {
+  flex: 1;
+}
+
+.test-email-section .btn {
+  padding: 12px 20px;
+  white-space: nowrap;
+}
+
+/* SMTP Tips */
+.smtp-tips {
+  background: var(--bg-tertiary);
+  border-radius: var(--border-radius);
+  padding: 16px;
+  border-left: 4px solid var(--info);
+}
+
+.smtp-tips h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: var(--info);
+}
+
+.smtp-tips ul {
+  margin: 0;
+  padding-left: 24px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.smtp-tips li {
+  margin-bottom: 4px;
+}
+
+.smtp-tips.success-tips {
+  border-left-color: #22c55e;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.smtp-tips.success-tips h4 {
+  color: #16a34a;
+}
+
+/* Gmail Setup Info Box */
+.gmail-setup-info {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border: 1px solid #93c5fd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.gmail-setup-info .info-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #1e40af;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.gmail-setup-info .info-header svg {
+  color: #3b82f6;
+}
+
+.gmail-setup-info .setup-steps {
+  margin: 0;
+  padding-left: 20px;
+  color: #334155;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.gmail-setup-info .setup-steps li {
+  margin-bottom: 8px;
+}
+
+.gmail-setup-info .setup-steps a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.gmail-setup-info .setup-steps a:hover {
+  color: #1d4ed8;
+}
+
+.gmail-setup-info .setup-steps strong {
+  color: #1e40af;
+}
+
+/* Field Hints */
+.field-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.form-group input.readonly-hint {
+  background: var(--bg-tertiary);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-lg {
+  padding: 14px 32px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .test-email-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .test-email-section .btn {
+    justify-content: center;
+  }
+  
+  .form-actions {
+    justify-content: center;
+  }
+  
+  .btn-lg {
+    width: 100%;
+    justify-content: center;
+  }
+}
