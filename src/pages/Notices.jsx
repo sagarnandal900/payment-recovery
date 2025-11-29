@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 import { 
   FileText, 
   Scale, 
@@ -13,7 +12,6 @@ import {
   AlertTriangle,
   Shield,
   Gavel,
-  HandCoins,
   FileCheck,
   Stamp,
   PenTool,
@@ -497,7 +495,6 @@ const NoticeCard = ({ notice, index }) => {
 };
 
 const Notices = () => {
-  const { user } = useAuth();
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {

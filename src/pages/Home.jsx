@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { 
   Video, FileText, BarChart3, Scale, Link2, Target, 
   Play, BookOpen, Rocket, Calendar, Building2, CheckCircle,
-  Clock, Landmark, Diamond, Timer, ClipboardList, ChevronRight,
+  Clock, Landmark, Diamond, Timer, ClipboardList,
   CheckSquare, TrendingUp, FileSpreadsheet, Star, MessageSquare,
   RefreshCw, CalendarDays, Flag, Zap, CalendarClock, XCircle,
-  FolderOpen, Users, Phone, PhoneCall, Globe, Mail, Search,
-  CreditCard, Shield, Wrench, GraduationCap, Tv, AlertTriangle,
+  FolderOpen, Users, Phone, Globe, Mail, Search,
+  CreditCard, Shield, Wrench, GraduationCap, AlertTriangle,
   Ban, Upload, DollarSign, Edit, ArrowUp, ExternalLink,
   PlayCircle, MonitorPlay, UserCheck, Headphones, Bell,
   MessageCircle, Sparkles

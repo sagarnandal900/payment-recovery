@@ -3,7 +3,7 @@ import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
-import { LogIn, User, Lock, Eye, EyeOff, Mail } from 'lucide-react';
+import { LogIn, Eye, EyeOff, Mail } from 'lucide-react';
 import OTPVerification from './OTPVerification';
 import './Login.css';
 
