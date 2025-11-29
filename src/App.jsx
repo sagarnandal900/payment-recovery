@@ -108,7 +108,7 @@ function App() {
           <Route path="change-password" element={<ChangePassword />} />
         </Route>
 
-        {/* Catch all - redirect to home or login */}
+        {/* Catch all - redirect to home or login  */}
         <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
       </Routes>
     </>
