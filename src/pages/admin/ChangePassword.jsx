@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { Lock, Eye, EyeOff, Save, RefreshCw, Shield } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
 import api from '../../config/api';
 import toast from 'react-hot-toast';
 import './ChangePassword.css';
 
 const ChangePassword = () => {
-  const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [showPasswords, setShowPasswords] = useState({
     current: false,

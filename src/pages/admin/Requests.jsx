@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { UserPlus, Check, X, Clock, User, Mail, Briefcase, Calendar, Filter, Search, RefreshCw } from 'lucide-react';
+import { UserPlus, Check, X, Clock, Mail, Briefcase, Calendar, Search, RefreshCw } from 'lucide-react';
 import api from '../../config/api';
 import toast from 'react-hot-toast';
 import './Requests.css';

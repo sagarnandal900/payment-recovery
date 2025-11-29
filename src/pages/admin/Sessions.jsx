@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import api from '../../config/api';
 import { 
   BarChart3, Calendar, Download, RefreshCw, Clock
@@ -35,11 +35,7 @@ const Sessions = () => {
   const [dateFrom, setDateFrom] = useState('');
   const [dateTo, setDateTo] = useState('');
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const params = {};
@@ -58,7 +54,11 @@ const Sessions = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [dateFrom, dateTo]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   const handleExport = async () => {
     try {

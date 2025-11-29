@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Settings as SettingsIcon, Mail, Server, Lock, Save, TestTube, RefreshCw, CheckCircle, AlertCircle, KeyRound, Info } from 'lucide-react';
+import { Settings as SettingsIcon, Mail, Server, Save, TestTube, RefreshCw, CheckCircle, KeyRound, Info } from 'lucide-react';
 import api from '../../config/api';
 import toast from 'react-hot-toast';
 import './Settings.css';
