@@ -3,7 +3,7 @@ import axios from 'axios';
 // ============================================
 // API BASE URL - CHANGE THIS ONE PLACE ONLY
 // ============================================
-export const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://prbk.wizoneit.com/api/api';
+export const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://prbk.rushneeksingh.com/api/api';
 
 // Create axios instance with base configuration
 const api = axios.create({
