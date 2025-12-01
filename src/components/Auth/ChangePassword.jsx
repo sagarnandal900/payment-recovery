@@ -33,15 +33,24 @@ const ChangePassword = () => {
       return;
     }
 
+    if (oldPassword === newPassword) {
+      toast.error('New password must be different from current password');
+      return;
+    }
+
     setLoading(true);
     const result = await changePassword(oldPassword, newPassword);
     setLoading(false);
 
     if (result.success) {
       toast.success('Password changed successfully!');
-      navigate('/');
+      setOldPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+      // Navigate after a short delay
+      setTimeout(() => navigate('/'), 1000);
     } else {
-      toast.error(result.error);
+      toast.error(result.error || 'Failed to change password');
     }
   };
 

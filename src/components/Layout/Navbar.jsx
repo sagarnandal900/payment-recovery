@@ -129,17 +129,19 @@ const Navbar = () => {
         </Link>
       )}
 
-      {/* Fixed Action Buttons - Desktop Only */}
-      <div className="top-action-btns desktop-only">
-        <Link to="/change-password" className="action-btn action-btn-password">
-          <KeyRound size={18} />
-          <span>Change Password</span>
-        </Link>
-        <button onClick={handleLogout} className="action-btn action-btn-logout">
-          <LogOut size={18} />
-          <span>Logout</span>
-        </button>
-      </div>
+      {/* Fixed Action Buttons - Desktop Only (Hidden on Notices page) */}
+      {!isOnNoticesPage && (
+        <div className="top-action-btns desktop-only">
+          <Link to="/change-password" className="action-btn action-btn-password">
+            <KeyRound size={18} />
+            <span>Change Password</span>
+          </Link>
+          <button onClick={handleLogout} className="action-btn action-btn-logout">
+            <LogOut size={18} />
+            <span>Logout</span>
+          </button>
+        </div>
+      )}
 
       {/* Main Navigation Header */}
       <header className={`navbar-header ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -155,15 +157,17 @@ const Navbar = () => {
             </div>
           </Link>
           
-          {/* Hamburger Menu Button */}
-          <button 
-            className={`navbar-toggle ${mobileMenuOpen ? 'active' : ''}`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigation"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
+          {/* Hamburger Menu Button - Only show on Home page */}
+          {!isOnNoticesPage && (
+            <button 
+              className={`navbar-toggle ${mobileMenuOpen ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle navigation"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          )}
 
           {/* Navigation Menu */}
           <ul className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`}>
@@ -181,8 +185,8 @@ const Navbar = () => {
               </button>
             </li>
 
-            {/* Navigation Links */}
-            {navLinks.map((link) => (
+            {/* Navigation Links - Only show on Home page */}
+            {!isOnNoticesPage && navLinks.map((link) => (
               <li key={link.id} className="navbar-item">
                 <a 
                   href={`#${link.id}`}
@@ -199,8 +203,8 @@ const Navbar = () => {
               </li>
             ))}
 
-            {/* Admin Link */}
-            {user?.isAdmin && (
+            {/* Admin Link - Only show on Home page */}
+            {!isOnNoticesPage && user?.isAdmin && (
               <li className="navbar-item">
                 <Link to="/admin" className="navbar-link admin-link">
                   <Shield size={20} className="navbar-link-icon" />
@@ -213,36 +217,58 @@ const Navbar = () => {
             {/* Mobile Actions Section */}
             <li className="mobile-divider mobile-only"></li>
             
-            <li className="mobile-only mobile-action-item">
-              <Link 
-                to="/notices" 
-                className="mobile-action-link mobile-notice" 
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Bell size={20} />
-                <span>View Important Notice</span>
-                <ChevronRight size={18} />
-              </Link>
-            </li>
+            {/* Show "View Important Notice" button only on Home page */}
+            {!isOnNoticesPage && (
+              <li className="mobile-only mobile-action-item">
+                <Link 
+                  to="/notices" 
+                  className="mobile-action-link mobile-notice" 
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Bell size={20} />
+                  <span>View Important Notice</span>
+                  <ChevronRight size={18} />
+                </Link>
+              </li>
+            )}
             
-            <li className="mobile-only mobile-action-item">
-              <Link 
-                to="/change-password" 
-                className="mobile-action-link mobile-password" 
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <KeyRound size={20} />
-                <span>Change Password</span>
-                <ChevronRight size={18} />
-              </Link>
-            </li>
+            {/* Show "Back to Home" button only on Notices page */}
+            {isOnNoticesPage && (
+              <li className="mobile-only mobile-action-item">
+                <Link 
+                  to="/" 
+                  className="mobile-action-link mobile-notice" 
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Home size={20} />
+                  <span>Back to Home</span>
+                  <ChevronRight size={18} />
+                </Link>
+              </li>
+            )}
             
-            <li className="mobile-only mobile-logout-container">
-              <button onClick={handleLogout} className="mobile-logout-btn">
-                <LogOut size={20} />
-                <span>Logout</span>
-              </button>
-            </li>
+            {!isOnNoticesPage && (
+              <li className="mobile-only mobile-action-item">
+                <Link 
+                  to="/change-password" 
+                  className="mobile-action-link mobile-password" 
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <KeyRound size={20} />
+                  <span>Change Password</span>
+                  <ChevronRight size={18} />
+                </Link>
+              </li>
+            )}
+            
+            {!isOnNoticesPage && (
+              <li className="mobile-only mobile-logout-container">
+                <button onClick={handleLogout} className="mobile-logout-btn">
+                  <LogOut size={20} />
+                  <span>Logout</span>
+                </button>
+              </li>
+            )}
           </ul>
         </nav>
       </header>

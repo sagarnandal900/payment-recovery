@@ -6,6 +6,7 @@ import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
 import Login from './components/Auth/Login';
 import RequestAccess from './components/Auth/RequestAccess';
+import ChangePasswordUser from './components/Auth/ChangePassword';
 import Home from './pages/Home';
 import Notices from './pages/Notices';
 import AdminLayout from './pages/admin/AdminLayout';
@@ -87,6 +88,19 @@ function App() {
               <Navbar />
               <main className="main-content">
                 <Notices />
+              </main>
+              <Footer />
+            </div>
+          </ProtectedRoute>
+        } />
+
+        {/* User Change Password Route */}
+        <Route path="/change-password" element={
+          <ProtectedRoute>
+            <div className="app-container">
+              <Navbar />
+              <main className="main-content">
+                <ChangePasswordUser />
               </main>
               <Footer />
             </div>

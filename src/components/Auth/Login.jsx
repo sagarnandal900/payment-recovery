@@ -43,7 +43,7 @@ const Login = ({ isAdmin = false }) => {
     e.preventDefault();
     
     if (!username || !password) {
-      toast.error('Please enter username and password');
+      toast.error(isAdmin ? 'Please enter username and password' : 'Please enter username/email and password');
       return;
     }
 
@@ -136,12 +136,12 @@ const Login = ({ isAdmin = false }) => {
 
           <form onSubmit={handleSubmit} className="login-form">
             <div className="form-group">
-              <label className="form-label">Username</label>
+              <label className="form-label">{isAdmin ? 'Username' : 'Customer or Email'}</label>
               <div className="input-wrapper">
                 <input
                   type="text"
                   className="form-input"
-                  placeholder="Enter your username"
+                  placeholder={isAdmin ? "Enter your username" : "Enter your customer or email"}
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   autoComplete="username"

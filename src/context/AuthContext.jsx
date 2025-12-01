@@ -158,12 +158,16 @@ export const AuthProvider = ({ children }) => {
 
   const changePassword = async (oldPassword, newPassword) => {
     try {
-      await api.post('/auth/change-password', { oldPassword, newPassword });
+      await api.post('/auth/change-password', { 
+        oldPassword, 
+        newPassword 
+      });
       return { success: true };
     } catch (error) {
+      console.error('Password change error:', error);
       return { 
         success: false, 
-        error: error.response?.data?.error || 'Password change failed' 
+        error: error.response?.data?.error || error.response?.data?.message || 'Password change failed' 
       };
     }
   };
